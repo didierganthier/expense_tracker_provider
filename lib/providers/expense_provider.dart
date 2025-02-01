@@ -23,6 +23,7 @@ class ExpenseProvider extends ChangeNotifier {
   }
 
   void removeExpense(String id) {
-    _expenses.firstWhere((expense) => expense.id == id);
+    _expenses.removeWhere((expense) => expense.id == id);
+    notifyListeners();
   }
 }
